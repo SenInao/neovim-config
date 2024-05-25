@@ -58,7 +58,15 @@ return require('packer').startup(function(use)
 	requires = { 'nvim-tree/nvim-web-devicons' },
     config = function ()
         require'alpha'.setup(require'alpha.themes.dashboard'.config)
-	end}
+	end
+  }
+
+  use 'github/copilot.vim'
+
+  use {
+	'CopilotC-Nvim/CopilotChat.nvim',
+	requires = {'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim'}
+  }
 
   use 'xiyaowong/transparent.nvim'
 

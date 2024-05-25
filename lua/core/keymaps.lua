@@ -36,6 +36,15 @@ vim.keymap.set('n', '<c-F4>',  ':bd<CR>')
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_prev)
 
+local CopilotAsk = function ()
+	local input = vim.fn.input("Quick Chat: ")
+	if input ~= "" then
+		require("CopilotChat").ask(input, {selection = require("CopilotChat.select").buffer})
+	end
+end
+
+vim.keymap.set("n", "<leader>ccq", CopilotAsk)
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", {clear = true}),
 	callback = function()
