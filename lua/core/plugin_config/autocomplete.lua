@@ -66,7 +66,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 
 require('lspconfig')['pyright'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_dir = function ()
+	  return vim.fn.getcwd()
+  end
 }
 
 require('lspconfig')['html'].setup {
