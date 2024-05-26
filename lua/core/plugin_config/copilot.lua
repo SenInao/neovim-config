@@ -1,5 +1,11 @@
 local chat = require("CopilotChat")
 chat.setup {
+	debug = false,
+	highlight = {
+		chat = "CopilotChat",
+		chat_window = "CopilotChatWindow",
+		chat_footer = "CopilotChatFooter",
+	},
 	window = {
     layout = 'vertical', -- 'vertical', 'horizontal', 'float', 'replace'
     width = 0.5, -- fractional width of parent, or absolute width in columns when > 1
@@ -14,5 +20,3 @@ chat.setup {
     zindex = 1, -- determines if window is on top or below other floating windows
   },
 }
-
-vim.cmd[[Copilot disable]]
