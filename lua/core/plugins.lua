@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'ryanoasis/vim-devicons'
-  use 'windwp/nvim-ts-autotag'
 
   use 'williamboman/mason-lspconfig.nvim'
   use 'williamboman/mason.nvim'
@@ -69,6 +68,13 @@ return require('packer').startup(function(use)
   }
 
   use 'xiyaowong/transparent.nvim'
+
+  use {
+		'windwp/nvim-ts-autotag',
+		config = function ()
+			require('core.plugin_config.treesitter')
+		end,
+  }
 
   require('packer').sync()
 end)

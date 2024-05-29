@@ -1,5 +1,18 @@
-require("nvim-treesitter.configs").setup {
-	ensure_installed = {"lua", "python", "javascript", "html", "css", "vim", "vimdoc", "query", "c"},
+require"nvim-treesitter.configs".setup {
+	ensure_installed = {
+		"lua",
+		"python",
+		"javascript",
+		"html",
+		"css",
+		"vim",
+		"vimdoc",
+		"query",
+		"c",
+		"typescript",
+		"tsx",
+	},
+
 	highlight = {
 		enable = true
 	},
@@ -10,6 +23,10 @@ require("nvim-treesitter.configs").setup {
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
 	},
 
+	autotag = {
+		enable = true,
+	},
+
 	incremental_selection = {
 		enable = true,
 		keymaps = {
@@ -18,5 +35,6 @@ require("nvim-treesitter.configs").setup {
 			scope_incremental = "<Leader>sc",
 			node_decremental = "<Leader>sd",
 		},
-	}
+	},
+
 }

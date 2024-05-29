@@ -1,2 +1,3 @@
-local pywal = require("pywal")
-pywal.setup()
+vim.cmd[[colorscheme tokyonight]]
+--local pywal = require("pywal")
+--pywal.setup()
